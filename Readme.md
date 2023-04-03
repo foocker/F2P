@@ -12,15 +12,38 @@ face-nn, mmcv config.
 ## Directory Structure and weights dir 
 1. effect of factorch is very general
 ```
-# cd F2P, tree -L 1 -d
+# cd F2P, tree -L 2 -d
 .
 ├── configs
 ├── K2P
+│   ├── config
+│   ├── dataset
+│   ├── enginenet
+│   ├── faceanalysis
+│   ├── fileio
+│   ├── logs
+│   ├── module
+│   ├── solver
+│   ├── utils
+│   └── visual
 ├── mediapipe_results
 ├── output
+│   ├── checkpoints
+│   ├── logs
+│   └── testvisual
 ├── test_imgs
 ├── test_result
+│   ├── embeding_imgs
+│   ├── gt_test_result
+│   ├── imitator
+│   ├── line_imgs
+│   ├── parameter_add
+│   ├── simulate_imgs
+│   └── video
 └── weights
+    ├── dat
+    ├── onnx
+    └── torchscript
 ```
 
 ```
