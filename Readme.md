@@ -9,8 +9,20 @@ prepare your own dataset and write your own cleabafacedata.py(class of FaceParam
 # reference code
 face-nn, mmcv config. 
 
-## weights dir
+## Directory Structure and weights dir 
 1. effect of factorch is very general
+```
+# cd F2P, tree -L 1 -d
+.
+├── configs
+├── K2P
+├── mediapipe_results
+├── output
+├── test_imgs
+├── test_result
+└── weights
+```
+
 ```
 ./weights
 ./dat
