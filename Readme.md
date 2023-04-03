@@ -2,12 +2,10 @@
 ## data
 prepare your own dataset and write your own cleabafacedata.py(class of FaceParameters)
 ## train, infer
-1. change the config.yaml 
-    1.5 task I, T, Infer
-    1.9 python test_.py
+1. change the config.yaml(task I, T, Infer)
 2. python run.py
 3. mediapipe_test.py is a hardcode method(added new plan), not compelete yet, but does not affect the original program.
-
+4. python test_.py for test imitator and other
 # reference code
 face-nn, mmcv config. 
 
