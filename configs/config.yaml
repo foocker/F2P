@@ -1,0 +1,76 @@
+# task: Infer # I, T, Infer
+task: T # I, T, Infer
+# task: I # I, T, Infer
+
+# Common for I and T
+cuda: True
+batch_size: 20  # T is 50, I is 100
+lr: 0.0001
+epoch: 91u
+# epoch_I: 500, batch(16), sgd(0.9, )
+# epoch_T: 20
+save_epoch_freq: 10
+eval_freq: 10
+finetune: True
+finetune_addlayer: True
+save_model_tag_info: "tagTf"
+infer_model_name_i: "Imitator_130_tagII.pth"  # 130 is first 
+infer_model_name_t: "Translator_90_tagTf.pth"  # 70 is useful, 90 is ok 
+
+# Generator
+dst_size: 256 # Imatator
+faceparameter_train_dir: "/data/data_320"
+# faceparameter_test_dir: "/data/data_320/test"
+# faceparameter_test_dir: "/data/data_320_test"  # add data for test but may not frontal
+faceparameter_test_dir: "/data/data_320_test_male"  # add data for test but may not frontal
+
+
+#  data of Generator
+use_whitening: False
+keep_rate: 0.9 # pca keep ration
+celebafrontal_dir: "/data/img_align_celeba_crop_frontal"
+imatator_checkpoint_dir: "./output/checkpoints/Imitator"
+
+# Segmentation
+# seg_checkpoint: ./weights/dat/79999_iter.pth
+seg_checkpoint: "/data/F2P/K2P/faceanalysis/parsing/DML_CSR/dml_csr_lapa.pth"
+model_seg: ""
+# w: [1.2, 1.4, 1.1, .7, 1., 1.]
+w : [0, 1.3, 1.6, 1.6, 2, 2, 1.6, 1.5, 1.8, 1.5, 0]  # for lapa helen dataset. label means in parsing/dml_csr/test.py
+seg_num_classes: 11
+
+# Feature embeding
+# light_cnn or insightface
+face_embeding_method: "lightcnn" # insightface,lightcnn
+num_classes: 80013 # 79077, 80013
+lightcnn_checkpoint: "./weights/dat/LightCNN_29Layers_V2_checkpoint.pth.tar"
+
+# Translator
+mode: "train" # train, test
+params_cnt: 28
+embeding_dim: 256
+projection_reduce: False
+cn: 28
+dn: 0
+celeba_dir: "/data/img_align_celeba_crop"
+translator_checkpoint_dir: "./output/checkpoints/translator"
+
+# inference 
+inference_checkpoint: "/data/F2P/output/checkpoints/translator/Translator_90_tagTf.pth"
+
+# continuous sum is 208
+Eyebrow: 24
+# eyebrow-head, eyebrow-body, eyebrow-tail
+Eye: 51
+# whole, outside upper eyelid, inside upper eyelid, lower eyelid, inner corner, outer corner
+Nose: 30
+# whole, bridge, wing, tip, bottom
+Mouth: 42
+# whole, middle upper lip, outer upper lip, middle lower lip, outer lower lip, corner
+Face: 61
+# forehead, glabellum, cheekbone, risorius, cheek, jaw, lower jaw, mandibular corner, outer jaw
+
+# 102 discrete parameters for female (22 hair styles, 36 eyebrow styles, 19 lipstick styles, and 25 lipstick colors)
+
+# 56 discrete parameters for male (23 hair styles, 26 eyebrow styles,and 7 beard styles)
+

@@ -1,0 +1,5 @@
+_target_: facetorch.logger.LoggerJsonFile
+name: facetorch
+level: 20
+path_file: /d/code/GameCharacterAuto-Creation/K2P/output/logs/facetorch/main.log
+json_format: '%(asctime)s %(levelname)s %(message)s'
