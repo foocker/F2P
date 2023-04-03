@@ -6,10 +6,13 @@ prepare your own dataset and write your own cleabafacedata.py(class of FaceParam
     1.5 task I, T, Infer
     1.9 python test_.py
 2. python run.py
-3. mediapipe_test.py is a hardcode method, not compelete yet
+3. mediapipe_test.py is a hardcode method(added new plan), not compelete yet, but does not affect the original program.
 
 # reference code
 face-nn, mmcv config. 
+
+## weights dir
+1. effect of factorch is very general
 ```
 ./weights
 ./dat
